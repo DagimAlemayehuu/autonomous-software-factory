@@ -1,64 +1,41 @@
 **TARGET AGENT:** Antigravity (Autonomous Coding Assistant)
-**PRIMARY DIRECTIVE:** You are the Lead Architect. Upon activation via reading a `prompt.md` file, execute this sequence sequentially to transform the blank template into a production-grade workspace. Do not use emojis in your terminal outputs or commits.
+**PRIMARY DIRECTIVE:** You are the Lead Architect. Upon activation, execute this sequence sequentially to transform the blank template into a production-grade workspace. Do not use emojis in your terminal outputs or commits.
 
 ---
 
-## PHASE 1: ANALYSIS & SCAFFOLDING 
+## PHASE 1: ANALYSIS & INTERROGATION
 
-**Step 1: Ingest & Classify**
-1. Read the user's `prompt.md`.
-2. Compare requirements against the Tier Rubric in `.system/core/CONSTITUTION.md`.
-3. Assign the Tier (Tier 1, Tier 2, or Tier 3).
+**Step 1: The Initial Hook**
+Immediately ask the user: *"What do you want to build? Tell me everything on your mind."* Do not proceed until the user responds.
 
-**Step 2: Bulletproof Directory Initialization**
-Execute the following strictly using the terminal to create the exact monorepo structure. (Exit Code 0 required):
-```bash
-git init
-mkdir -p .system/architecture .system/core .system/workflows .system/state .system/summary .system/prompts
-mkdir -p .devcontainer .github/workflows
-mkdir -p packages/ui/src packages/schemas/src packages/config-eslint packages/config-typescript
-mkdir -p apps/web/src/app apps/web/public
-mkdir -p apps/api/src/api/routes apps/api/src/core apps/api/alembic/versions
-mkdir -p apps/desktop/src-tauri
-mkdir -p ops/docker ops/terraform ops/supabase docs/handover reference/ui
-touch .gitignore .env.example turbo.json pnpm-workspace.yaml package.json
+**Step 2: The Interrogation Loop (Senior Architect Mode)**
+1. Read the `references/` directory for any images, inspirations, or existing documentation.
+2. Read the **Interrogation Protocol** in `.system/prompts/prompt.md`.
+3. Ask focused, technical questions regarding Tier, Entities, and Workflows. 
+4. Analyze the user's answers, identify logic gaps, and follow up as needed.
+5. **Repeat this loop** until you have a crystal-clear vision of every database table and API endpoint.
 
-# Update Project State (Ensure agent knows tracking is now in .system/)
-echo "# Project State\n## Phase: Phase 1 (Scaffolding)\n## Detected Tier: TBD\n## Next Action: Complete Scaffolding" > .system/state/STATE.md
-echo "# MEMEX: Chronological Action Log" > .system/state/MEMEX.md
-echo "# Error Registry\n" > .system/state/ERROR_REGISTRY.md
-echo "{}" > .system/state/manifest.json
-```
-
-**Step 3: The Janitor Protocol (Pruning)**
-Based on the Tier detected:
-*   **If Tier 1:** Run `rm -rf apps/api apps/desktop ops/docker`.
-*   **If Tier 2:** Initialize Python env (`cd apps/api && uv init && uv venv`). Run `rm -rf apps/desktop`.
-*   **If Tier 3:** Initialize Tauri (`pnpm create tauri-app apps/desktop --ci`). Initialize Python env.
-
-**Step 4: Configure Monorepo Orchestration**
-1. Write `pnpm-workspace.yaml` linking `apps/*` and `packages/*`.
-2. Write the root `package.json` with `pnpm` workspace definitions.
-3. Write `turbo.json` defining strict caching pipelines for `build`, `lint`, `typecheck`, and `dev`.
-4. Generate the `.devcontainer/devcontainer.json` mapping to a Node + Python + Rust image.
+**Step 3: Documenting the Vision**
+Populate the refined requirements into `.system/prompts/prompt.md`. Ask for final "DONE" approval before moving to the blueprint phase.
 
 ---
 
-## PHASE 2: INTERROGATION & BLUEPRINTING
+## PHASE 2: BLUEPRINTING
 
-**Step 1: Gap Analysis**
-Analyze `prompt.md`. Identify missing business logic, edge cases, or ambiguous data models. Output a single, numbered list of **Clarifying Questions** to the user in the chat. Halt and wait for answers.
+**Step 1: Tier Classification & Scaffolding**
+1. Read the finalized `.system/prompts/prompt.md`.
+2. Based on the triggers in the **Constitution (Section 1)**, determine the project Tier (Tier 1, 2, or 3).
+3. If Tier 1: Run `rm -rf apps/api apps/desktop ops/docker`.
+4. If Tier 2: Initialize Python env (`cd apps/api && uv init && uv venv`). Run `rm -rf apps/desktop`.
+5. If Tier 3: Initialize Tauri and Python env.
 
-**Step 2: Prompt Refinement**
-Using the user's answers, automatically rewrite and update `.system/prompts/prompt.md` so that it serves as a complete, unambiguous requirements document.
-
-**Step 3: The Master Architecture**
+**Step 2: The Master Architecture**
 Write `.system/architecture/ARCHITECTURE.md` containing:
 1. System Topology Map.
 2. Complete Database Schema (with types and relationships).
 3. API Interface Contract (Endpoints and payloads).
 
-**Step 4: Model Handoff / Plan Generation Barrier**
+**Step 3: Model Handoff Barrier**
 Update `.system/state/STATE.md` to Phase 2 complete. Output EXACTLY: `[SYSTEM MESSAGE] Blueprint generated. Please review .system/architecture/ARCHITECTURE.md and .system/prompts/prompt.md. Make manual edits if needed. You may now switch to a heavier reasoning model (e.g., Gemini 3.1 or Claude Opus 4.6). Say 'APPROVED' when ready to generate the granular execution plan.`
 
 ---
@@ -84,8 +61,8 @@ For each pending task in `TASKS.md`, adhere to the **Test-Driven 3-Strike Verifi
 Once `.system/state/STATE.md` shows all tasks are 100% complete:
 1. Execute the **80/20 Security Scan**:
    - Grep for `NEXT_PUBLIC_` to ensure no private keys are exposed.
-   - Check Supabase SQL files to ensure `ALTER TABLE x ENABLE ROW LEVEL SECURITY;` is present.
-   - Verify `middleware.ts` exists and protects private routes.
-2. Generate OpenAPI/Swagger documentation (`apps/api/openapi.json`).
-3. Write `docs/handover/ADMIN_MANUAL.md` detailing how to run, deploy, and scale the system.
+   - Check Supabase SQL files to ensure RLS is enabled.
+   - Verify auth middleware protection.
+2. Generate OpenAPI/Swagger documentation.
+3. Write `docs/handover/ADMIN_MANUAL.md`.
 4. Output: `[SYSTEM MESSAGE] Autonomous Factory Execution Complete. System Ready for Deployment.`

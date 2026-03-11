@@ -37,6 +37,7 @@ Projects are strictly bound to their assigned Tier. Do not over-engineer beyond 
 │   ├── architecture/                     # Architecture blueprints
 │   ├── core/                             # Constitution & Rules
 │   ├── state/                            # STATE.md & MEMEX.md logs
+│   ├── prompts/                          # The "Source of Truth" requirement docs
 │   └── workflows/                        # Agent workflows and slash commands
 ├── apps/                                 # ISOLATED DELIVERY MECHANISMS
 │   ├── web/                              # Next.js App Router
@@ -45,6 +46,7 @@ Projects are strictly bound to their assigned Tier. Do not over-engineer beyond 
 ├── packages/                             # SHARED INTERNAL LIBRARIES
 │   ├── ui/                               # Shared React UI components (Shadcn, Tailwind)
 │   └── schemas/                          # AUTO-GENERATED Zod schemas (Synced to Pydantic)
+├── references/                           # USER ASSETS (Inspirations, Images, Docs)
 └── ops/                                  # DEVOPS & INFRASTRUCTURE
 ```
 
@@ -110,3 +112,4 @@ You are FORBIDDEN from manually writing TypeScript interfaces for API responses.
     3. Auth Middleware protects all private routes.
     4. Server-Side validation exists on all API endpoints.
     5. Database migrations (`alembic`) do not destructively drop production columns without human review.
+```
