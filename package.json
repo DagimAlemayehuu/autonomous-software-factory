@@ -1,0 +1,27 @@
+{
+  "name": "autonomous-factory",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Autonomous Software Factory - High-grade professional agency template.",
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck",
+    "clean": "turbo run clean && rm -rf node_modules",
+    "sidecar:dev": "cd apps/api && uv run uvicorn src.api.main:app --host localhost --port 8765 --reload",
+    "dev:all": "concurrently --names 'SIDECAR,TAURI' --prefix-colors 'blue,green' \"pnpm sidecar:dev\" \"cd apps/desktop && pnpm tauri:dev\"",
+    "test": "turbo run test",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "husky": "^9.0.11",
+    "turbo": "^2.0.0"
+  },
+  "packageManager": "pnpm@9.0.0",
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=9.0.0"
+  }
+}
