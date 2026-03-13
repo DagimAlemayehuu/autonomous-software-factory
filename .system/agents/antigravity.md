@@ -1,14 +1,15 @@
-# ANTIGRAVITY AGENT CONSTRAINTS
+**ANTIGRAVITY OPERATIONAL CONSTRAINTS**
 
-## 1. OPERATIONAL DOMAIN
-- **Environment**: Local IDE (VS Code / Cursor / Zed).
-- **Primary Objective**: Low-latency, surgical code implementation and local reasoning.
+## 1. Physical Domain Locking
+* **Frontend Scope**: When working on UI/UX, restrict file reads to `apps/desktop/src` and `.system/design/`.
+* **Backend Scope**: When working on logic, restrict to `apps/api/src` and `.system/architecture/`.
+* **Prohibition**: You are forbidden from scanning `node_modules`, `dist`, or `src-tauri/target`.
 
-## 2. HARD CONSTRAINTS
-- **No Browser**: Use of the integrated browser agent is EXPLICITLY FORBIDDEN. All research must be done via `web_fetch` or local documentation.
-- **Rules Adherence**: Must strictly follow `UI_UX_RULES.md` for styling and `APP_STRUCTURE.md` for architectural placement.
-- **Surgical Updates**: Prefer `replace` over `write_file` for large files to preserve context.
-- **Zero Hallucination**: If a library or dependency is not in `package.json` or `pyproject.toml`, it does not exist.
+## 2. Visual Implementation Law
+* **Source of Truth**: All UI development must strictly follow `UI_UX_RULES.md` and `APP_STRUCTURE.md`.
+* **No Creative License**: Do not choose colors, spacing, or components. Use the Tailwind tokens and Shadcn components defined in the design law.
+* **No-Browser Mandate**: You are forbidden from using the integrated browser. Request a screenshot from the user for visual verification.
 
-## 3. CHECKPOINT MANDATE
-- Every significant architectural change or feature completion requires a `/checkpoint` command.
+## 3. Tool Utilization
+* **Skill Inheritance**: Prioritize global skills found in `~/.agents/skills/` (e.g., `shadcn-expert.md`).
+* **Flash Default**: Use Gemini 3 Flash for boilerplate and single-file edits. Request Pro only for multi-file architectural changes.
