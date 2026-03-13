@@ -8,14 +8,14 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { load } from '@tauri-apps/plugin-store';
 
-import DEFAULT_PROFILE_PERSONAL from '@/templates/profiles/personal.md?raw';
-import DEFAULT_PROFILE_ACADEMIC from '@/templates/profiles/academic.md?raw';
-import DEFAULT_PROFILE_FINANCIAL from '@/templates/profiles/financial.md?raw';
-import DEFAULT_PROFILE_FITNESS from '@/templates/profiles/fitness.md?raw';
-import DEFAULT_PROFILE_MASTER_PLAN from '@/templates/profiles/master_plan.md?raw';
+const DEFAULT_PROFILE_PERSONAL = "";
+const DEFAULT_PROFILE_ACADEMIC = "";
+const DEFAULT_PROFILE_FINANCIAL = "";
+const DEFAULT_PROFILE_FITNESS = "";
+const DEFAULT_PROFILE_MASTER_PLAN = "";
 
-import DEFAULT_SYSTEM_PROMPT_STRATEGIST from '@/templates/system-prompts/strategist.md?raw';
-import DEFAULT_SYSTEM_PROMPT_CREATOR from '@/templates/system-prompts/creator.md?raw';
+const DEFAULT_SYSTEM_PROMPT_STRATEGIST = "";
+const DEFAULT_SYSTEM_PROMPT_CREATOR = "";
 
 export interface CustomSliderConfig {
     id: string;
