@@ -12,7 +12,6 @@
     "sidecar:dev": "cd apps/api && uv run uvicorn src.api.main:app --host localhost --port 8765 --reload",
     "dev:all": "concurrently --names 'SIDECAR,TAURI' --prefix-colors 'blue,green' \"pnpm sidecar:dev\" \"cd apps/desktop && pnpm tauri:dev\"",
     "test": "turbo run test",
-    "checkpoint": "gemini-cli '/checkpoint'",
     "prepare": "husky"
   },
   "devDependencies": {

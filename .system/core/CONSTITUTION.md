@@ -38,7 +38,7 @@ Projects are strictly bound to their assigned Tier. Do not over-engineer beyond 
 │   ├── core/                             # Constitution & Rules
 │   ├── state/                            # STATE.md & MEMEX.md logs
 │   ├── prompts/                          # The "Source of Truth" requirement docs
-│   └── workflows/                        # Agent workflows and slash commands
+│   └── workflows/                        # Executable Runbooks for the AI agents
 ├── apps/                                 # ISOLATED DELIVERY MECHANISMS
 │   ├── web/                              # Next.js App Router
 │   ├── desktop/                          # Tauri + Vite + React (Local Executable)

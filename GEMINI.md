@@ -4,11 +4,14 @@
 - **Core Rules**: .system/core/
 - **Current State**: .system/state/
 - **Architecture**: .system/architecture/
+- **Operational Runbooks**: .system/workflows/
 
-## CUSTOM COMMANDS
-- **/initialize**: Triggers the `INITIALIZATION.md` workflow.
-- **/checkpoint**: Runs the state-sync script.
-- **/audit**: Runs a security and type-check scan on the active domain.
+## CORE RUNBOOK COMMANDS
+- **Start Project**: `Read .system/workflows/INITIALIZATION.md`
+- **Plan Sprints**: `Read .system/workflows/PLANNING.md`
+- **Build Frontend**: `Read .system/workflows/RUN_PROTOTYPE.md`
+- **Build Backend**: `Read .system/workflows/RUN_CORE_LOGIC.md`
+- **Resume Context**: `Read .system/workflows/RESUME.md`
 
 ## STACK FOCUS
 - **Primary**: Tauri v2 (Rust + React).
