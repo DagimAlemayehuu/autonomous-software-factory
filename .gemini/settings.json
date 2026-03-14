@@ -1,4 +1,6 @@
 {
   "respectGitIgnore": true,
-  "model": "gemini-3.1-pro"
+  "model": {
+    "name": "gemini-3.1-pro-preview"
+  }
 }
