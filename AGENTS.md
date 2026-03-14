@@ -55,11 +55,14 @@ You are strictly forbidden from modifying files outside of your assigned domain 
 ## 4. THE PHYSICAL PRE-COMMIT GATE (HUSKY)
 You cannot push broken code. When you run `git commit`, Husky will physically run `turbo run lint typecheck test`.
 1.  If the commit fails, read the terminal output carefully.
-2.  Fix the TypeScript type, syntax error, or failing test in your domain.
-3.  Re-run `git commit`. Do not attempt to bypass Husky hooks.
+2.  Fix the TypeScript type, syntax error, or failing test in your domain and re-run `git commit`.
+3.  **CIRCUIT BREAKER:** If you fail 3 times on the same issue, you are stuck in an infinite loop. You MUST STOP. Run `git commit --no-verify -m "DRAFT: Stuck on [error]"`, push, and halt execution.
 
 ## 5. STATE SYNCHRONIZATION
 When you finish your assigned task:
 1.  Move your specific sub-tasks from "In-Progress" to "Completed" in your domain's `.domain/LOCAL_TASKS.md`.
 2.  *(Only if Architect/Surgeon)* Update `.system/state/GLOBAL_TASKS.md`.
 3.  Push your branch and submit the Pull Request.
+
+## 6. THE SCHEMA IS LAW
+The files in `packages/schemas/` (Zod, OpenAPI, generated types) are **READ-ONLY** for all Builder Agents. You must build your code to fit the existing schema exactly. Only the Architect or Surgeon may modify the core schema.

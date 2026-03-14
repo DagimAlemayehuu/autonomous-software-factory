@@ -44,6 +44,7 @@ Your infrastructure code must adhere to these strict engineering standards:
 2. Never hardcode secrets in Dockerfiles or GitHub Actions; strictly use `${{ secrets.MY_KEY }}` syntax.
 3. CI/CD pipelines must cache dependencies using `actions/setup-node` or `actions/cache` for `pnpm-store` to keep build times under 5 minutes.
 4. Ensure the database migration script (`npx prisma migrate deploy` or `alembic upgrade head`) runs during the CI/CD deployment phase, not inside the app container's CMD.
+5. CI/CD pipelines must ALWAYS use `pnpm install --frozen-lockfile` to ensure deterministic builds.
 </coding_standards>
 
 <strict_constraints>
