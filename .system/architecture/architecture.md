@@ -13,37 +13,35 @@ You must meticulously define the Schema, API Contracts, and System Map.
 *   `apps/web-client`: [Framework/Tech]
 *   `apps/backend-api`: [Framework/Tech]
 *   `packages/database-orm`: [ORM/Tech]
+*   `packages/schemas`: [Shared Types/Zod/OpenAPI specs]
 
-## 2. Database Schema (The Source of Truth)
-> Define every single table, column, and relationship. Use Prisma or SQLAlchemy schema notation. This is the absolute law for the Database Builder.
+## 2. API-First Contracts (The Shared Types)
+> List the exact interfaces and payloads that will be generated inside `packages/schemas`. Do not leave ambiguity. The Frontend and Backend builders MUST strictly adhere to these shapes, or the Husky pre-commit hooks will block their PRs.
+
+### Example Contract: `packages/schemas/src/user.ts`
+```typescript
+import { z } from "zod";
+
+export const CreateUserSchema = z.object({
+  email: z.string().email(),
+  firstName: z.string().min(2),
+  role: z.enum(["admin", "user"]).default("user")
+});
+
+export type CreateUserRequest = z.infer<typeof CreateUserSchema>;
+```
+*   *(Architect: Generate every single endpoint payload request/response shape here or directly in the `packages/schemas` folder before moving on to Phase 3).*
+
+## 3. Database Schema Blueprint
+> Define every single table, column, and relationship. This must match the payloads defined above. Use Prisma or SQLAlchemy schema notation. This is the absolute law for the Database Builder.
 
 ```schema
 model User {
   id        String   @id @default(uuid())
   email     String   @unique
-  name      String?
-  posts     Post[]
+  firstName String
+  role      String   @default("user")
   createdAt DateTime @default(now())
-}
-```
-
-## 3. API Contracts (The Interface Law)
-> Define the exact JSON payloads for every endpoint. The Frontend and Backend builders will strictly adhere to these shapes. DO NOT omit this section.
-
-### Endpoint: `POST /api/users`
-**Request Payload:**
-```json
-{
-  "email": "user@example.com",
-  "name": "John Doe"
-}
-```
-**Response Payload (201 Created):**
-```json
-{
-  "id": "uuid-1234",
-  "email": "user@example.com",
-  "createdAt": "2024-05-15T12:00:00Z"
 }
 ```
 
