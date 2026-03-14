@@ -1,12 +1,11 @@
 import signal
 import sys
 import os
-import asyncio
 from contextlib import asynccontextmanager
-from typing import List, Dict, Any, Optional
+from typing import Optional
 
 import uvicorn
-from fastapi import FastAPI, Depends, Header, HTTPException, Body
+from fastapi import FastAPI, Header
 from fastapi.middleware.cors import CORSMiddleware
 
 # Define a generic AppSecrets dependency for the template

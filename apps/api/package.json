@@ -1,0 +1,13 @@
+{
+  "name": "@autonomous-factory/api",
+  "version": "1.0.0",
+  "description": "Python API using FastAPI and UV",
+  "scripts": {
+    "typecheck": "uv run mypy src",
+    "lint": "uv run ruff check src",
+    "test": "uv run pytest"
+  },
+  "dependencies": {
+    "@autonomous-factory/schemas": "workspace:*"
+  }
+}

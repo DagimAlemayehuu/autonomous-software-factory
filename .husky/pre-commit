@@ -1,6 +1,3 @@
-#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
-
 # [AUTONOMOUS FACTORY PRE-COMMIT HOOK]
 # This script physically prevents any AI Agent (or human) from committing broken code to the repository.
 # The agent will receive a non-zero exit code if this fails, forcing them to fix the code before proceeding.
@@ -9,7 +6,7 @@ echo "🔒 [PRE-COMMIT GATE]: Running Monorepo Code Quality Checks..."
 
 # 1. Typecheck the entire monorepo
 echo "📝 Typechecking all packages and apps..."
-pnpm turbo run typecheck --filter=...[HEAD~1]
+pnpm turbo run typecheck --filter=...[HEAD]
 if [ $? -ne 0 ]; then
   echo "❌ [PRE-COMMIT FAILED]: TypeScript errors detected. You MUST fix these before committing."
   exit 1
@@ -17,7 +14,7 @@ fi
 
 # 2. Lint the entire monorepo
 echo "🧹 Linting all packages and apps..."
-pnpm turbo run lint --filter=...[HEAD~1]
+pnpm turbo run lint --filter=...[HEAD]
 if [ $? -ne 0 ]; then
   echo "❌ [PRE-COMMIT FAILED]: Linter errors detected. You MUST fix these before committing."
   exit 1
@@ -25,7 +22,7 @@ fi
 
 # 3. Run unit tests on modified packages only
 echo "🧪 Running unit tests on modified packages..."
-pnpm turbo run test --filter=...[HEAD~1]
+pnpm turbo run test --filter=...[HEAD]
 if [ $? -ne 0 ]; then
   echo "❌ [PRE-COMMIT FAILED]: Unit tests failed. You MUST fix the failing tests before committing."
   exit 1
