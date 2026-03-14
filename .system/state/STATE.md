@@ -1,12 +1,27 @@
-# PROJECT STATE: Autonomous Software Factory
+<!--
+[TEMPLATE: MACRO PROJECT STATUS]
+Instructions for the Architect Agent (Delete this block before use):
+You MUST update this file periodically to reflect the overall state of the monorepo.
+This is the single source of truth for all Agents to understand the big picture.
+-->
 
-## 1. STRATEGIC OVERVIEW
-- **Tier**: Tier 3 (Enterprise/Edge) - Template Core
-- **Target Mode**: Pending Initialization
-- **Overall Completion**: 100% (Template Meta-State)
+# Project State
+## 1. Status Summary
+> A brief, human-readable summary of the current project status (e.g., "Architecture complete. Awaiting builder execution.", or "Frontend is 80% complete, blocked by API").
 
-## 2. ACTIVE MISSION
-Unified System Command Center (`.system/`) activated. Ready for project instantiation.
+**Current Status:** Initialization complete. Awaiting execution strategy (Solo or Team).
 
-## 3. TASK BACKLOG
-Tasks are tracked in `.system/state/TASKS.md` for granular breakdown and autonomous verification loops.
+## 2. Global Milestones
+> Track the major milestones of the project (e.g., "MVP Complete", "Beta Launch").
+
+*   [x] Initialization & Architecture
+*   [ ] Database Schema Deployed
+*   [ ] Backend API Verified
+*   [ ] Frontend UI Integrated
+*   [ ] Global E2E Tests Pass
+*   [ ] Production Deployment
+
+## 3. Active Blockers
+> Document any critical issues preventing progress across the entire system.
+
+*   *(None)*

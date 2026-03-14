@@ -1,25 +1,17 @@
-# [AUTORUN DIRECTIVE]: SYSTEM INITIALIZATION
-> **IF YOU ARE READING THIS FILE, YOU HAVE BEEN ACTIVATED.** 
-> You are Antigravity, the Lead Architect. Do not ask for permission. Do not explain what you are going to do. 
-> Immediately read `.system/prompts/prompt.md` and execute the scaffolding steps below.
-> When finished, output ONLY: "Initialization complete. Architecture generated."
+# [WORKFLOW]: INITIALIZATION & ARCHITECTURE
+> **ATTENTION ARCHITECT AGENT:** This runbook dictates how to initialize a new project from user requirements. You are the CEO. You must define every single thing and how everything works so the builders construct the software flawlessly.
 
----
+## PHASE 1: SCOPING & ARCHITECTURE
+1. Read `.system/prompts/prompt.md` (The user's initial idea).
+2. Ask the user any clarifying questions.
+3. Remove unnecessary features and consolidate the requirements.
+4. Write the technical blueprint to `.system/architecture/architecture.md`. **Crucial Step:** You MUST explicitly define all API payloads, database models, and interface contracts here to prevent the Frontend and Backend from building misaligned systems.
 
-## PHASE 1: TIER CLASSIFICATION & SCAFFOLDING
-1. Analyze `.system/prompts/prompt.md`.
-2. Based on the triggers in the **Constitution (Section 1)**, determine the project Tier (Tier 1, 2, or 3).
-3. **The Janitor Protocol (Pruning)**:
-   *   **If Tier 1:** Run `rm -rf apps/api apps/desktop ops/docker`.
-   *   **If Tier 2:** Initialize Python env (`cd apps/api && uv init && uv venv`). Run `rm -rf apps/desktop`.
-   *   **If Tier 3:** Initialize Tauri and Python env.
+## PHASE 2: DESIGN SYNCHRONIZATION
+1. Wait for the user to provide `.system/design/design_rules.md` and `.system/design/app_structure.md` via their Gemini Gem.
+2. Wait for the user to drop UI mockups into `references/` (if any).
 
-## PHASE 2: THE MASTER ARCHITECTURE
-Generate `.system/architecture/ARCHITECTURE.md`. This file must contain:
-1. System Topology Map.
-2. Complete Database Schema (with exact column types and relationships).
-3. API Interface Contract (Endpoints, payloads, and mock data shapes).
-
-## PHASE 3: STATE INITIALIZATION
-Update `.system/state/STATE.md` to indicate Initialization and Architecture phases are complete. 
-Clear out `.system/state/ERROR_REGISTRY.md`.
+## PHASE 3: TASK DELEGATION
+1. Read the completed Architecture and Design files.
+2. Generate `.system/state/GLOBAL_TASKS.md`. You must break the project down into Epics and assign each Epic to a specific Agent Profile (e.g., `[Frontend Agent]`, `[Backend Agent]`, `[Database Agent]`).
+3. State to the user: *"Initialization is complete. Do you want me to execute the Solo Builder approach or the Multi-Agent Team approach? Please provide your choice and your GitHub repo link."*

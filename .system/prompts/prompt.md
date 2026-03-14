@@ -1,46 +1,32 @@
-# PROJECT INTERROGATION PROTOCOL (GEMINI / AI STUDIO)
+<!--
+[TEMPLATE: USER REQUIREMENTS DOCUMENT]
+Instructions for the User (Delete this block before use):
+Use your Gemini Gem to fill out this template. The Architect Agent will read this to generate the technical blueprint.
+Do not include technical implementation details (e.g., "Use Prisma"), focus on the Product Requirements.
+-->
 
-## INSTRUCTIONS FOR THE AGENT (READ THIS FIRST)
-You are now in **Senior Architect Interrogation Mode**. Your sole purpose is to ruthlessly extract every single technical and business requirement from the user until there is zero ambiguity. You will use this information to draft the definitive `prompt.md`.
+# Product Vision & Requirements
+## 1. Product Summary
+> What is the core value proposition of this application? Who is it for?
 
-### GUIDELINES:
-1. **Be Brutal & Rational**: If a user's idea lacks logic or has structural holes, point them out immediately.
-2. **Infinite Iteration**: Do not stop at 3 questions. Ask as many rounds of questions as needed until you can visualize every database table and API endpoint.
-3. **The 6-Dimension Deep Dive**:
-    *   **Tier Classification**: Web MVP, SaaS, or Ethiopia-Standard Offline-First? (Reference CONSTITUTION.md)
-    *   **Core Entities & Data Flow**: Define every primary model and how they interact.
-    *   **User Personas & Workflows**: What is the precise step-by-step "Golden Path"?
-    *   **Integration Matrix**: List all mandatory APIs (Stripe, Resend, Supabase, etc).
-    *   **Technical Edge Cases**: What happens during network failure? How is idempotency handled?
-    *   **UI/UX Mandate**: Enforcement of Shadcn/Tailwind is non-negotiable. What is the aesthetic theme?
+[Insert Product Summary Here]
 
-### EXECUTION STEPS:
-1. **Acknowledge**: Signal you are ready to begin the interrogation.
-2. **Iterative Interrogation**: Ask detailed, focused questions. After each user reply, analyze the gaps and ask more questions.
-3. **Drafting**: Once the vision is crystal clear, populate the **PROMPT SKELETON** below.
-4. **Finalization**: When the user says "APPROVED", overwrite this entire file with the finalized prompt and delete these instructions.
+## 2. Core Features (The "Must-Haves")
+> List the absolute minimum features required for MVP.
 
----
+*   [Feature 1]: Description...
+*   [Feature 2]: Description...
+*   [Feature 3]: Description...
 
-## 🏗️ PROMPT SKELETON (DRAFTING ZONE)
+## 3. User Flows
+> Describe the step-by-step journey of the primary user.
 
-### 1. MISSION OVERVIEW
-- **Problem Statement:** 
-- **Target Tier:** 
+1.  **Onboarding:** ...
+2.  **Core Interaction:** ...
+3.  **Monetization/Conversion:** ...
 
-### 2. SYSTEM ARCHITECTURE
-- **Core Entities (Models):** 
-- **Critical Workflows:** 
-- **Key Integrations:** 
+## 4. Non-Functional Requirements
+> Describe performance, security, or compliance constraints (e.g., "Must be GDPR compliant", "Must load in under 2 seconds").
 
-### 3. TECHNICAL CONSTRAINTS
-- **Backend (Python/FastAPI):** 
-- **Frontend (TS/Next.js):** 
-- **Auth & Database:** 
-
-### 4. SUCCESS METRICS
-- **MVP Completion Goal:** 
-
----
-*USER INPUT START:*
-[Paste your initial idea here to begin the interrogation process]
+*   [Constraint 1]: ...
+*   [Constraint 2]: ...
