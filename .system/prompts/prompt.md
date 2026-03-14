@@ -1,46 +1,54 @@
-# PROJECT INTERROGATION PROTOCOL (GEMINI / AI STUDIO)
+<!--
+[TEMPLATE: MASTER REQUIREMENTS SPECIFICATION]
+Instructions for the User (Delete this block before use):
+Use your Gemini Gem to fill out this highly detailed template. The Architect Agent requires absolute clarity to build the system blueprint. Be exhaustive. Do not leave ambiguity.
+-->
 
-## INSTRUCTIONS FOR THE AGENT (READ THIS FIRST)
-You are now in **Senior Architect Interrogation Mode**. Your sole purpose is to ruthlessly extract every single technical and business requirement from the user until there is zero ambiguity. You will use this information to draft the definitive `prompt.md`.
+# 1. Product Vision & Core Value
+## 1.1 The "Elevator Pitch"
+> What is this product? In one sentence, what problem does it solve?
+[Insert pitch]
 
-### GUIDELINES:
-1. **Be Brutal & Rational**: If a user's idea lacks logic or has structural holes, point them out immediately.
-2. **Infinite Iteration**: Do not stop at 3 questions. Ask as many rounds of questions as needed until you can visualize every database table and API endpoint.
-3. **The 6-Dimension Deep Dive**:
-    *   **Tier Classification**: Web MVP, SaaS, or Ethiopia-Standard Offline-First? (Reference CONSTITUTION.md)
-    *   **Core Entities & Data Flow**: Define every primary model and how they interact.
-    *   **User Personas & Workflows**: What is the precise step-by-step "Golden Path"?
-    *   **Integration Matrix**: List all mandatory APIs (Stripe, Resend, Supabase, etc).
-    *   **Technical Edge Cases**: What happens during network failure? How is idempotency handled?
-    *   **UI/UX Mandate**: Enforcement of Shadcn/Tailwind is non-negotiable. What is the aesthetic theme?
+## 1.2 Target Audience & Use Case
+> Who is using this? Describe the primary persona and their typical environment (e.g., "A busy warehouse manager on an iPad with a weak 4G connection").
+[Insert audience]
 
-### EXECUTION STEPS:
-1. **Acknowledge**: Signal you are ready to begin the interrogation.
-2. **Iterative Interrogation**: Ask detailed, focused questions. After each user reply, analyze the gaps and ask more questions.
-3. **Drafting**: Once the vision is crystal clear, populate the **PROMPT SKELETON** below.
-4. **Finalization**: When the user says "APPROVED", overwrite this entire file with the finalized prompt and delete these instructions.
+# 2. Functional Requirements (The "Must-Haves")
+## 2.1 Core Capabilities
+> List the absolute minimum features required for the MVP to function. Be specific. Do not say "Authentication", say "Email/Password login with Forgot Password flow."
+*   **Capability 1:** [Name] - [Detailed description of what it does]
+*   **Capability 2:** [Name] - [Detailed description of what it does]
+*   **Capability 3:** [Name] - [Detailed description of what it does]
 
----
+## 2.2 User Roles & Permissions
+> Who can do what? (e.g., `Admin`, `Member`, `Guest`).
+*   **Role 1:** Can [actions]. Cannot [actions].
+*   **Role 2:** Can [actions]. Cannot [actions].
 
-## 🏗️ PROMPT SKELETON (DRAFTING ZONE)
+# 3. Step-by-Step User Journeys
+## 3.1 Journey 1: The Onboarding Flow
+> Describe exactly what happens the first time a user opens the app.
+1. User lands on `/`.
+2. User clicks "Sign Up".
+3. User enters X, Y, Z.
+4. User is redirected to `/dashboard` and sees the welcome modal.
 
-### 1. MISSION OVERVIEW
-- **Problem Statement:** 
-- **Target Tier:** 
+## 3.2 Journey 2: The Core Loop
+> Describe the primary action the user takes repeatedly.
+1. User clicks...
+2. System calculates...
+3. UI updates to show...
 
-### 2. SYSTEM ARCHITECTURE
-- **Core Entities (Models):** 
-- **Critical Workflows:** 
-- **Key Integrations:** 
+# 4. Data Entities (The Nouns)
+> What are the primary "things" in this app? (e.g., "Users, Products, Orders").
+*   **Entity A:** Has properties like [name, price, date_created].
+*   **Entity B:** Belongs to Entity A. Has properties like [status, quantity].
 
-### 3. TECHNICAL CONSTRAINTS
-- **Backend (Python/FastAPI):** 
-- **Frontend (TS/Next.js):** 
-- **Auth & Database:** 
+# 5. Non-Functional & Technical Constraints
+## 5.1 Performance & Scale
+> e.g., "Must support 1,000 concurrent users." "Pages must load in < 1 second."
+[Insert constraints]
 
-### 4. SUCCESS METRICS
-- **MVP Completion Goal:** 
-
----
-*USER INPUT START:*
-[Paste your initial idea here to begin the interrogation process]
+## 5.2 Integrations & External Services
+> Does this app need to talk to the outside world? (e.g., "Must use Stripe for billing," "Must use SendGrid for transactional emails").
+*   **Integration 1:** [Service name] - [Purpose]
